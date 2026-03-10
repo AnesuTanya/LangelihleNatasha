@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=DM+Serif+Display&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #2a1b1f;
+  --accent: #d66b81;
+  --accent-dark: #b45267;
+  --serif: 'DM Serif Display', serif;
+  --display: 'DM Serif Display', serif;
+  --script: 'Dancing Script', cursive;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fff6f1;
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
