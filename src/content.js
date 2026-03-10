@@ -18,103 +18,132 @@ const toPublicImageUrl = (fileName) => {
 
 const images = imageFiles.map(toPublicImageUrl);
 
-const storyBeats = [
+const profileHighlights = [
   {
-    title: 'Chapter One: The First Light',
-    text: 'A story that begins with grace. The kind of smile that makes the room softer and the day feel brighter.',
+    title: 'Strategic Business Mindset',
+    text: 'Business management professional with experience in strategic planning, marketing, customer service, strategic management, and organizational behavior and culture.',
   },
   {
-    title: 'Chapter Two: Grace in Motion',
-    text: 'Outings, laughter, and camera-ready moments. She moves with quiet confidence and a heart for beauty.',
+    title: 'Digital-First Communicator',
+    text: 'Focused on social media marketing and customer support, with practical understanding of audience engagement, digital visibility, and relationship management.',
   },
   {
-    title: 'Chapter Three: The Horizon',
-    text: 'Dreams unfolding with faith, curiosity, and a gentle courage that keeps reaching for more.',
-  },
-];
-
-const aboutFacts = [
-  { icon: '🎂', label: 'Born', value: 'August 26, 2005' },
-  { icon: '📚', label: 'Education', value: 'Administration' },
-  { icon: '💃', label: 'Profession', value: 'Model' },
-  { icon: '😊', label: 'Known For', value: 'A beautiful smile' },
-  { icon: '🎉', label: 'Loves', value: 'Outings & adventures' },
-];
-
-const lifestyleTags = [
-  { icon: '🌅', label: 'Golden-hour glow' },
-  { icon: '🎧', label: 'Music that feels like a hug' },
-  { icon: '📸', label: 'Camera-ready moments' },
-  { icon: '🧭', label: 'Adventure & curiosity' },
-  { icon: '🙏', label: 'Faith & gratitude' },
-  { icon: '✨', label: 'Graceful presence' },
-];
-
-const galleryBlocks = [
-  {
-    big: { src: images[9], label: 'Vintage', position: '50% 25%' },
-    mediums: [
-      { src: images[1], label: 'Golden Hour', position: '50% 40%' },
-      { src: images[2], label: 'Soft Glow', position: '50% 20%' },
-      { src: images[3], label: 'In Monochrome', position: '50% 30%' },
-      { src: images[4], label: 'Creative Muse', position: '50% 25%' },
-    ],
-  },
-  {
-    big: { src: images[8], label: 'Sunset', position: '50% 55%' },
-    mediums: [
-      { src: images[5], label: 'Outdoor Vibes', position: '50% 35%' },
-      { src: images[6], label: 'Outing Day', position: '50% 30%' },
-      { src: images[7], label: 'Photoshoot', position: '50% 30%' },
-      { src: images[0], label: 'Timeless', position: '50% 35%' },
-    ],
+    title: 'Value-Driven Team Player',
+    text: 'Committed to contributing measurable value through teamwork, patience, communication, innovation, and a disciplined work ethic.',
   },
 ];
 
-const memories = [
+const contactFacts = [
+  { icon: 'Name', label: 'Full Name', value: 'Langelihle Natasha Kumbemba' },
+  { icon: 'Role', label: 'Focus', value: 'Social Media Marketing & Customer Support' },
+  { icon: 'Mail', label: 'Email', value: 'kumbembalangelihle@gmail.com' },
+  { icon: 'Call', label: 'Phone', value: '+263 781 998 998' },
+  { icon: 'Base', label: 'Location', value: 'Harare, Zimbabwe' },
+];
+
+const skillTags = [
+  { icon: 'Care', label: 'Customer care' },
+  { icon: 'Media', label: 'Social media marketing' },
+  { icon: 'Assess', label: 'Psychological assessment' },
+  { icon: 'Think', label: 'Innovative' },
+  { icon: 'Calm', label: 'Patient' },
+  { icon: 'Team', label: 'Team player' },
+  { icon: 'Tech', label: 'Computer literate' },
+  { icon: 'Time', label: 'Time conscious' },
+  { icon: 'Speak', label: 'Communication' },
+];
+
+const languages = ['Shona', 'English', 'Chewa'];
+
+const experienceCards = [
   {
-    src: images[8],
-    title: 'Sunset Hush',
-    text: 'When the day slows down and everything glows.',
-    tag: 'Golden hour',
+    src: images[4],
+    title: 'Certified Professional Model',
+    text: 'Top Models Zimbabwe | May 2024 - Present | Harare, Zimbabwe. Strengthened confidence, innovation, patience, professionalism, and critical thinking while gaining practical exposure to digital marketing performance, social media engagement, and conversion-focused brand promotion.',
+    tag: 'Modeling & brand presence',
     tilt: '-2deg',
   },
   {
-    src: images[6],
-    title: 'City Sparkle',
-    text: 'A little adventure, a lot of laughter.',
-    tag: 'Outing day',
+    src: images[7],
+    title: 'Business Administrator',
+    text: 'Pace College | Aug 2023 - Sep 2024 | Harare, Zimbabwe. Developed and implemented strategic plans to support annual revenue targets through marketing activities, open surveys, questionnaires, and coordinated teamwork.',
+    tag: 'Administration & strategy',
     tilt: '1.5deg',
   },
   {
-    src: images[9],
-    title: 'Vintage Heart',
-    text: 'Classic, timeless, effortlessly lovely.',
-    tag: 'Old soul',
+    src: images[8],
+    title: 'Customer-Oriented Strength',
+    text: 'Experience across customer service and business environments has strengthened responsiveness, professionalism, and the ability to support clients while maintaining positive brand representation.',
+    tag: 'Customer support',
     tilt: '-1deg',
   },
   {
     src: images[5],
-    title: 'Open Air',
-    text: 'Fresh wind, soft light, and a bright smile.',
-    tag: 'Free spirit',
+    title: 'Marketing Perspective',
+    text: 'Combines business administration and modeling exposure to understand both structured strategy and audience appeal, particularly in social-media-led campaigns.',
+    tag: 'Digital marketing',
     tilt: '2deg',
   },
 ];
 
-const loveNotes = [
+const projectCards = [
   {
-    title: 'A quiet promise',
-    text: 'I admire the way you carry yourself with grace. You make ordinary moments feel golden.',
+    title: 'Featured Project',
+    items: [
+      '2023 Zimbabwe Agricultural Show | Pace College | Oct 2023',
+      'Represented the company as part of the team at the Agric Show.',
+      'Engaged with different industries, improved brand recognition, and contributed to customer growth opportunities for the company.',
+    ],
+    signature: 'Projects',
   },
   {
-    title: 'What I notice',
-    text: 'Your smile feels like a sunrise. Warm, honest, and impossible not to love.',
+    title: 'Certificates & Education',
+    items: [
+      'Level 5 Advanced Business Management Diploma',
+      'Level 5 qualification',
+      'Ordinary Level subjects: English, Maths, Business Studies, Travel & Tourism, Geography',
+    ],
+    signature: 'Credentials',
   },
   {
-    title: 'Always rooting for you',
-    text: 'I see your strength and your kindness. I hope your days are as beautiful as your heart.',
+    title: 'References',
+    items: [
+      'Karin Coric | Certified Professional Model, Top Models Zimbabwe | +263 773 421 649 / +263 780 835 351',
+      'Tatenda Njanike | Certified Professional Model, Njanike Agency Blueprint | +263 71 919 4102',
+      'Mr Kevin | Business Administrator, Pace College | +263 775 157701',
+    ],
+    signature: 'Contacts',
   },
 ];
 
-export { aboutFacts, galleryBlocks, images, lifestyleTags, loveNotes, memories, storyBeats };
+const galleryBlocks = [
+  {
+    big: { src: images[9], label: 'Professional Presence', position: '50% 25%' },
+    mediums: [
+      { src: images[1], label: 'Confidence', position: '50% 40%' },
+      { src: images[2], label: 'Poise', position: '50% 20%' },
+      { src: images[3], label: 'Focus', position: '50% 30%' },
+      { src: images[4], label: 'Creative Energy', position: '50% 25%' },
+    ],
+  },
+  {
+    big: { src: images[8], label: 'Brand Storytelling', position: '50% 55%' },
+    mediums: [
+      { src: images[5], label: 'Outdoor Campaigns', position: '50% 35%' },
+      { src: images[6], label: 'Public Engagement', position: '50% 30%' },
+      { src: images[7], label: 'Media Readiness', position: '50% 30%' },
+      { src: images[0], label: 'Timeless Professionalism', position: '50% 35%' },
+    ],
+  },
+];
+
+export {
+  contactFacts,
+  experienceCards,
+  galleryBlocks,
+  images,
+  languages,
+  profileHighlights,
+  projectCards,
+  skillTags,
+};

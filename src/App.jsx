@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
-  aboutFacts,
+  contactFacts,
+  experienceCards,
   galleryBlocks,
   images,
-  lifestyleTags,
-  loveNotes,
-  memories,
-  storyBeats,
+  languages,
+  profileHighlights,
+  projectCards,
+  skillTags,
 } from './content';
 import './App.css';
 
@@ -34,6 +35,9 @@ const createFloatingItems = (
 function App() {
   const [currentImage, setCurrentImage] = useState(0);
   const imageCount = images.length;
+  const phoneNumber = '+263781998998';
+  const whatsappHref = `https://wa.me/${phoneNumber.replace(/\D/g, '')}`;
+  const emailHref = 'mailto:kumbembalangelihle@gmail.com';
 
   const floatingHearts = useMemo(
     () =>
@@ -74,6 +78,10 @@ function App() {
     return () => clearInterval(timer);
   }, [imageCount]);
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="app">
       <div className="floating-layer">
@@ -88,7 +96,7 @@ function App() {
               fontSize: heart.size,
             }}
           >
-            ❤️
+            ♥
           </div>
         ))}
         {floatingRoses.map((rose, i) => (
@@ -102,7 +110,7 @@ function App() {
               fontSize: rose.size,
             }}
           >
-            🌹
+            *
           </div>
         ))}
       </div>
@@ -111,27 +119,45 @@ function App() {
         <nav className="nav">
           <div className="logo">LN</div>
           <div className="nav-links">
-            <a href="#story">Story</a>
-            <a href="#about">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#memories">Memories</a>
-            <a href="#notes">Love Notes</a>
+            <a href="#story">Profile</a>
+            <a href="#about">Skills</a>
+            <a href="#gallery">Portfolio</a>
+            <a href="#memories">Experience</a>
+            <a href="#notes">Credentials</a>
           </div>
         </nav>
 
         <div className="hero-grid">
           <div className="hero-text">
-            <p className="eyebrow">Lifestyle Biography</p>
+            <p className="eyebrow">Professional Profile</p>
             <h1 className="hero-title">Langelihle Natasha Kumbemba</h1>
-            <p className="hero-subtitle">Model • Administrator • Beautiful Soul</p>
+            <p className="hero-subtitle">Social Media Marketing • Customer Support</p>
             <p className="hero-blurb">
-              A living portrait of elegance and warmth. This is a page for the moments that glow,
-              the memories that linger, and the love that whispers softly.
+              Business management professional with experience in strategic planning, marketing,
+              customer service, strategic management, and organizational behavior, committed to
+              adding value and supporting organizational goals through disciplined teamwork.
             </p>
             <div className="hero-tags">
-              <span>Golden-hour heart</span>
-              <span>Adventure & faith</span>
-              <span>Grace in motion</span>
+              <span>Harare, Zimbabwe</span>
+              <span>Customer care</span>
+              <span>Digital marketing</span>
+            </div>
+            <div className="hero-actions">
+              <button type="button" className="primary-action" onClick={handlePrint}>
+                Download CV
+              </button>
+              <a className="secondary-action" href={emailHref}>
+                <span className="action-icon" aria-hidden="true">
+                  @
+                </span>
+                <span>Email</span>
+              </a>
+              <a className="secondary-action" href={whatsappHref} target="_blank" rel="noreferrer">
+                <span className="action-icon" aria-hidden="true">
+                  WA
+                </span>
+                <span>WhatsApp</span>
+              </a>
             </div>
           </div>
 
@@ -139,7 +165,7 @@ function App() {
             <div className="portrait-frame">
               <img src={images[currentImage]} alt="Langelihle portrait" />
             </div>
-            <p className="portrait-caption">Where beauty meets calm.</p>
+            <p className="portrait-caption">Creative, strategic, and client-focused.</p>
             <div className="portrait-dots">
               {images.map((_, index) => (
                 <button
@@ -161,15 +187,15 @@ function App() {
 
       <section className="section story" id="story">
         <div className="section-header">
-          <p className="section-kicker">Story</p>
-          <h2>Her Story, Told in Light</h2>
+          <p className="section-kicker">Profile</p>
+          <h2>Professional Summary</h2>
           <p className="section-lede">
-            A lifestyle biography is more than facts. It is the feeling she leaves behind, the way
-            she carries kindness, and the quiet glow of her presence.
+            A concise summary of the business, marketing, and support capabilities that define her
+            professional profile.
           </p>
         </div>
         <div className="story-grid">
-          {storyBeats.map((beat, index) => (
+          {profileHighlights.map((beat, index) => (
             <article key={beat.title} className="story-card">
               <span className="story-index">0{index + 1}</span>
               <h3>{beat.title}</h3>
@@ -178,37 +204,78 @@ function App() {
           ))}
         </div>
         <div className="story-quote">
-          <p>“She is clothed with strength and dignity; she can laugh at the days to come.”</p>
-          <span>Proverbs 31:25</span>
+          <p>
+            Bringing together confidence, communication, and strategy to support brands, teams,
+            and customers with purpose.
+          </p>
+          <span>Professional Summary</span>
         </div>
       </section>
 
       <section className="section about" id="about">
         <div className="section-header">
-          <p className="section-kicker">About</p>
-          <h2>Essentials & Lifestyle</h2>
-          <p className="section-lede">The details that shape her world, with a touch of softness.</p>
+          <p className="section-kicker">Skills</p>
+          <h2>Contact, Languages, and Core Strengths</h2>
+          <p className="section-lede">
+            Essential contact details and core capabilities relevant to customer-facing and
+            administrative roles.
+          </p>
         </div>
         <div className="about-grid">
           <div className="about-card">
-            <h3>Essentials</h3>
+            <h3>Contact Details</h3>
             <ul className="about-list">
-              {aboutFacts.map((fact) => (
+              {contactFacts.map((fact) => (
                 <li key={fact.label}>
                   <span className="about-icon">{fact.icon}</span>
                   <div>
                     <strong>{fact.label}</strong>
-                    <span>{fact.value}</span>
+                    {fact.label === 'Email' ? (
+                      <a className="contact-link" href={emailHref}>
+                        <span className="action-icon inline-icon" aria-hidden="true">
+                          @
+                        </span>
+                        {fact.value}
+                      </a>
+                    ) : fact.label === 'Phone' ? (
+                      <a
+                        className="contact-link"
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span className="action-icon inline-icon" aria-hidden="true">
+                          WA
+                        </span>
+                        {fact.value}
+                      </a>
+                    ) : (
+                      <span>{fact.value}</span>
+                    )}
                   </div>
                 </li>
               ))}
             </ul>
+            <div className="contact-actions">
+              <a className="secondary-action" href={emailHref}>
+                <span className="action-icon" aria-hidden="true">
+                  @
+                </span>
+                <span>Send Email</span>
+              </a>
+              <a className="secondary-action" href={whatsappHref} target="_blank" rel="noreferrer">
+                <span className="action-icon" aria-hidden="true">
+                  WA
+                </span>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
           </div>
 
           <div className="about-card">
-            <h3>Signature Life</h3>
+            <h3>Skills & Languages</h3>
             <div className="chip-grid">
-              {lifestyleTags.map((tag) => (
+              {skillTags.map((tag) => (
                 <span key={tag.label} className="chip">
                   {tag.icon} {tag.label}
                 </span>
@@ -217,12 +284,12 @@ function App() {
 
             <div className="favorites-grid">
               <div className="favorite-tile">
-                <p className="favorite-label">Favorite Song</p>
-                <p className="favorite-title">“Beautiful” by Akon</p>
+                <p className="favorite-label">Languages</p>
+                <p className="favorite-title">{languages.join(' • ')}</p>
               </div>
               <div className="favorite-tile">
-                <p className="favorite-label">Favorite Verse</p>
-                <p className="favorite-title">Proverbs 31 Woman</p>
+                <p className="favorite-label">Interests</p>
+                <p className="favorite-title">Cooking & Baking</p>
               </div>
             </div>
           </div>
@@ -231,10 +298,11 @@ function App() {
 
       <section className="section gallery" id="gallery">
         <div className="section-header">
-          <p className="section-kicker">Gallery</p>
-          <h2>Moments That Sparkle</h2>
+          <p className="section-kicker">Portfolio</p>
+          <h2>Creative Presence and Brand Readiness</h2>
           <p className="section-lede">
-            Each frame holds a mood, a memory, and a little bit of magic.
+            Visual presence matters in modern communication. This portfolio section reflects
+            confidence, presentation, and audience-facing professionalism.
           </p>
         </div>
         <div className="gallery-layout">
@@ -267,14 +335,15 @@ function App() {
 
       <section className="section memories" id="memories">
         <div className="section-header">
-          <p className="section-kicker">Memories</p>
-          <h2>The Memory Wall</h2>
+          <p className="section-kicker">Experience</p>
+          <h2>Professional Experience</h2>
           <p className="section-lede">
-            Little snapshots of the feelings that stay with you long after the day ends.
+            A practical record of roles, strengths, and the work that has shaped her professional
+            direction.
           </p>
         </div>
         <div className="memory-wall">
-          {memories.map((memory) => (
+          {experienceCards.map((memory) => (
             <article
               key={memory.title}
               className="memory-card"
@@ -295,18 +364,23 @@ function App() {
 
       <section className="section love-notes" id="notes">
         <div className="section-header">
-          <p className="section-kicker">Love Notes</p>
-          <h2>Words I Hold Close</h2>
+          <p className="section-kicker">Credentials</p>
+          <h2>Projects, Certificates, and References</h2>
           <p className="section-lede">
-            Gentle notes written with admiration, kept here as a small love letter.
+            Supporting details that complete the profile, from formal learning to project exposure
+            and professional contacts.
           </p>
         </div>
         <div className="notes-grid">
-          {loveNotes.map((note) => (
+          {projectCards.map((note) => (
             <article key={note.title} className="note-card">
               <h3>{note.title}</h3>
-              <p>{note.text}</p>
-              <span className="note-signature">With love, always</span>
+              <div className="note-list">
+                {note.items.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+              <span className="note-signature">{note.signature}</span>
             </article>
           ))}
         </div>
@@ -314,7 +388,7 @@ function App() {
 
       <footer className="footer">
         <p className="footer-title">Langelihle Natasha Kumbemba</p>
-        <p className="footer-subtitle">Beautiful inside & out.</p>
+        <p className="footer-subtitle">Social media marketing and customer support professional.</p>
       </footer>
     </div>
   );
